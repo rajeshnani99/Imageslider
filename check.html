@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #slider {
+      margin: auto;
+      width: 40%;
+
+      padding: 10px;
+    }
+  </style>
+  <body>
+    <div id="slider">
+      <img name="slide" width="500px" height="500px" />
+    </div>
+
+    <script>
+      var i = 0;
+      var images = [];
+      var time = 3000;
+      images[0] = "image1.webp";
+      images[1] = "image2.webp";
+      images[2] = "image3.webp";
+
+      function change() {
+        document.slide.src = images[i];
+
+        if (i < images.length - 1) {
+          i++;
+        } else {
+          i = 0;
+        }
+        setTimeout("change()", time);
+      }
+      window.onload = change;
+    </script>
+  </body>
+</html>
